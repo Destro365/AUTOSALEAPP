@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="hr" data-theme="dark">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AutoSale | News - Savjeti</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        .article-hero { 
+            height: 60vh; 
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3), #0a0a0a), 
+                        url('https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=1920&q=80'); 
+            background-size: cover; 
+            background-position: center; 
+            display: flex; 
+            align-items: flex-end; 
+            padding-bottom: 120px; 
+        }
+        .article-content { max-width: 900px; margin: -120px auto 100px; position: relative; z-index: 10; padding: 0 20px; }
+        .article-card { 
+            background: rgba(15, 15, 15, 0.98); 
+            padding: 60px; 
+            border-radius: 24px; 
+            border: 1px solid var(--border); 
+            backdrop-filter: blur(20px); 
+            box-shadow: 0 40px 80px rgba(0,0,0,0.6); 
+        }
+        .checklist-item { 
+            margin-bottom: 45px; 
+            padding-left: 30px; 
+            border-left: 2px solid var(--accent); 
+            transition: 0.3s;
+        }
+        .checklist-item:hover {
+            border-left-width: 6px;
+            padding-left: 35px;
+        }
+        .checklist-item h3 { font-family: 'Syncopate', sans-serif; font-size: 0.85rem; margin-bottom: 12px; color: #fff; letter-spacing: 2px; }
+        .checklist-item p { line-height: 1.6; }
+    </style>
+</head>
+<body>
+
+<header class="site-header">
+    <div class="nav-container">
+        <a href="index.html" class="logo">AUTO<span>SALE</span></a>
+        
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="gallery.html">Vehicles</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <div class="nav-right">
+            <a href="kosarica.html" id="garage-link" class="cart-link" style="display: none;">GARAGE [<span id="cart-count">0</span>]</a>            <button id="themeToggle" class="theme-toggle-btn-menu">🌓</button>
+            <a href="login.html" class="login-btn-top" id="login-trigger">Login/Sign Up</a>
+            
+            <div class="hamburger" id="hamburger">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="mobile-nav-overlay" id="mobile-menu">
+        <ul class="mobile-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="gallery.html">Vehicles</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.html">Login/Sign Up</a></li>
+        </ul>
+    </div>
+</header>
+<section class="article-hero">
+    <div class="container" data-aos="fade-up">
+        <p class="category-label" style="color: var(--accent); letter-spacing: 4px;">OPERATIONAL GUIDE</p>
+        <h1 class="syncopate" style="font-size: clamp(1.8rem, 5vw, 3.5rem); color: #fff; line-height: 1.2;">KONTROLNA LISTA <br> PRIJE KUPNJE VOZILA</h1>
+    </div>
+</section>
+
+<main class="container article-content">
+    <div class="article-card" data-aos="fade-up">
+        <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--border); padding-bottom: 25px; margin-bottom: 50px; font-size: 0.65rem; color: var(--text-muted); letter-spacing: 1px;">
+            <span><strong>OBJAVLJENO:</strong> 18. PROSINCA 2025.</span>
+            <span style="color: var(--accent); font-weight: 800; text-transform: uppercase;">Elite Pro Tips</span>
+        </div>
+
+        <p class="muted" style="font-size: 1.1rem; margin-bottom: 60px; line-height: 1.9; font-weight: 300;">
+            Akvizicija high-end vozila nije samo kupnja, već investicija. Kako biste osigurali integritet vaše nove imovine, naš stručni tim pripremio je rigorozan protokol pregleda.
+        </p>
+
+        
+
+        <div class="checklist-item">
+            <h3 class="syncopate">01. Verifikacija Dokumentacije</h3>
+            <p class="muted small">Fizička provjera VIN broja na više točaka (šasija, vjetrobran, pragovi). Cross-reference s digitalnim servisnim zapisima je obavezan korak.</p>
+        </div>
+
+        <div class="checklist-item">
+            <h3 class="syncopate">02. Analiza Karoserije i Laka</h3>
+            <p class="muted small">Korištenje mjerača debljine laka za otkrivanje prikrivenih popravaka. Provjera zazora (gapova) između panela koji moraju biti kirurški precizni.</p>
+        </div>
+
+        <div class="checklist-item">
+            <h3 class="syncopate">03. Mehanički Integritet</h3>
+            <p class="muted small">Hladni start motora, provjera tragova curenja tekućina i stanje kočionih diskova (osobito kod karbon-keramičkih sustava).</p>
+        </div>
+
+        <div class="checklist-item">
+            <h3 class="syncopate">04. Dijagnostički Izvještaj</h3>
+            <p class="muted small">Pristupanje ECU sustavu vozila radi provjere povijesti pogrešaka i stvarne kilometraže zabilježene u modulima mjenjača.</p>
+        </div>
+
+        <div style="margin-top:70px; display:flex; gap:15px; border-top: 1px solid var(--border); padding-top: 50px; flex-wrap: wrap;">
+            <a class="btn-lux" href="news.html" style="padding: 15px 30px;">← Back to the News</a>
+            <a class="btn-lux primary" href="contact.html" style="padding: 15px 40px;">Trebate pomoć? Kontaktirajte nas</a>
+        </div>
+    </div>
+
+
+    
+</main>
+
+<footer>
+    <div class="footer-container" style="text-align: center; padding: 80px 5%; border-top: 1px solid var(--border); background: #020202; margin-top: 100px;">
+        <div class="logo syncopate" style="font-size: 1.8rem; letter-spacing: 5px;">
+            AUTO<span>SALE</span>
+        </div>
+
+        <div class="social-icons">
+            <a href="https://facebook.com"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://instagram.com"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://twitter.com"><i class="fa-brands fa-twitter"></i></a>
+            <a href="https://youtube.com"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://github.com/Destro365"><i class="fa-brands fa-github"></i></a>
+        </div>
+
+        <p style="opacity: 0.3; font-size: 0.6rem; letter-spacing: 1px; margin-top: 20px;">© 2025 AUTOSALE ELITE GROUP. ALL RIGHTS RESERVED.</p>
+    </div>
+
+    
+
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="main.js"></script>
+<script>
+    AOS.init({ duration: 1000, once: true });
+</script>
+</body>
+</html>

@@ -1,0 +1,367 @@
+/* --- 1. VARIJABLE I TEMA --- */
+:root {
+    --black-deep: #050505;
+    --black-card: #0c0c0c;
+    --accent: #d9ff00; 
+    --text-main: #ffffff;
+    --text-muted: #888888;
+    --glass: rgba(255, 255, 255, 0.03);
+    --border: rgba(255, 255, 255, 0.08);
+    --transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+[data-theme="light"] {
+    --black-deep: #f4f4f4;
+    --black-card: #ffffff;
+    --text-main: #111111;
+    --text-muted: #666666;
+    --border: rgba(0, 0, 0, 0.1);
+}
+
+/* --- 2. OSNOVNE POSTAVKE --- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { 
+    background-color: var(--black-deep); 
+    color: var(--text-main); 
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+.container { width: 90%; max-width: 1400px; margin: 0 auto; }
+
+/* --- 3. HEADER & NAVIGACIJA (POPRAVLJENO) --- */
+.site-header {
+    position: fixed; top: 0; width: 100%; z-index: 1000;
+    padding: 1rem 0; background: var(--black-deep); 
+    backdrop-filter: blur(15px); border-bottom: 1px solid var(--border);
+}
+
+.nav-container {
+    width: 90%; max-width: 1400px; margin: 0 auto;
+    display: flex; justify-content: space-between; align-items: center;
+}
+
+.logo { 
+    font-family: 'Syncopate', sans-serif; font-size: 1.2rem; letter-spacing: 4px; 
+    text-decoration: none; color: var(--text-main); font-weight: 700;
+}
+.logo span { color: var(--accent); }
+
+.nav-links { display: flex; gap: 30px; list-style: none; align-items: center; }
+.nav-links a { 
+    color: var(--text-muted); text-decoration: none; text-transform: uppercase; 
+    font-size: 0.7rem; letter-spacing: 2px; font-weight: 600; transition: var(--transition); 
+}
+.nav-links a:hover, .nav-links a.active { color: var(--accent); }
+
+.nav-right { display: flex; align-items: center; gap: 20px; }
+
+.login-btn-top {
+    text-decoration: none; color: var(--text-main); font-size: 0.65rem;
+    text-transform: uppercase; border: 1px solid var(--border);
+    padding: 8px 16px; border-radius: 4px; letter-spacing: 1px;
+    font-weight: 700; transition: var(--transition);
+}
+
+/* --- 4. HERO SEKCIJA --- */
+.hero {
+    height: 100vh; display: flex; align-items: center; justify-content: center;
+    background: linear-gradient(rgba(0,0,0,0.6), var(--black-deep)), 
+                url('img/Background.jpg');
+    background-size: cover; background-position: center; text-align: center;
+}
+.hero-content h1 { 
+    font-family: 'Syncopate', sans-serif; font-size: clamp(2.5rem, 10vw, 6rem); 
+    line-height: 1; margin: 1.5rem 0; color: #fff; 
+}
+
+/* --- 5. SEARCH --- */
+.search-container { margin-top: -60px; position: relative; z-index: 10; padding: 0 5%; }
+.glass-search {
+    background: rgba(15,15,15,0.8); backdrop-filter: blur(20px);
+    border: 1px solid var(--border); border-radius: 20px; padding: 30px;
+    display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-end;
+    justify-content: center; max-width: 1000px; margin: 0 auto;
+}
+.search-group { display: flex; flex-direction: column; gap: 10px; flex: 1; min-width: 200px; }
+.search-group label { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); }
+.search-group select, .search-group input {
+    background: #000; border: 1px solid var(--border); color: #fff;
+    padding: 12px; border-radius: 8px; outline: none;
+}
+.btn-search {
+    background: var(--accent); color: #000; border: none; padding: 12px 30px;
+    border-radius: 8px; font-weight: 800; text-transform: uppercase;
+    cursor: pointer; height: 45px; transition: 0.3s;
+}
+
+/* --- 6. MARQUEE STRIP --- */
+.marquee-strip { background: var(--accent); color: #000; padding: 15px 0; overflow: hidden; margin: 40px 0; }
+.marquee-content { white-space: nowrap; display: inline-block; animation: marquee 30s linear infinite; font-size: 0.8rem; font-weight: 800; }
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+/* --- 7. KATEGORIJE --- */
+.filter-grid-main { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; padding: 40px 0; }
+.f-item {
+    background: var(--black-card); border: 1px solid var(--border);
+    padding: 25px; border-radius: 20px; min-width: 140px;
+    text-align: center; cursor: pointer; transition: var(--transition);
+}
+.f-item:hover { border-color: var(--accent); transform: translateY(-10px); background: #111; }
+.f-item span { font-size: 2rem; display: block; margin-bottom: 10px; }
+.f-item p { font-family: 'Syncopate'; font-size: 0.65rem; letter-spacing: 1px; }
+
+/* --- 8. KARTICE VOZILA --- */
+.grid-container { width: 90%; max-width: 1400px; margin: 80px auto; }
+.car-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 30px; }
+.car-card { background: var(--black-card); border: 1px solid var(--border); border-radius: 20px; overflow: hidden; transition: var(--transition); }
+.car-card:hover { transform: translateY(-10px); border-color: var(--accent); }
+.car-img-wrap { height: 250px; overflow: hidden; }
+.car-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
+.car-info { padding: 30px; }
+
+/* --- 9. HAMBURGER & MOBILE OVERLAY  --- */
+.hamburger { 
+    display: none; cursor: pointer; flex-direction: column; gap: 6px; z-index: 1100;
+}
+.hamburger span { width: 25px; height: 2px; background: #fff; transition: 0.3s; }
+
+.hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.hamburger.active span:nth-child(2) { opacity: 0; }
+.hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(6px, -7px); }
+
+.mobile-nav-overlay {
+    position: fixed; top: 0; right: -100%; width: 100%; height: 100vh;
+    background: var(--black-deep); z-index: 1050; transition: var(--transition);
+    display: flex; align-items: center; justify-content: center;
+}
+.mobile-nav-overlay.open { right: 0; }
+
+.mobile-links { list-style: none; text-align: center; }
+.mobile-links li { margin: 30px 0; }
+.mobile-links a { 
+    font-family: 'Syncopate', sans-serif; font-size: 1.5rem; 
+    color: #fff; text-decoration: none; text-transform: uppercase; 
+}
+
+@media (max-width: 992px) {
+    .hamburger { display: flex; }
+    .nav-links { display: none; }
+    .login-btn-top { display: none; }
+    .glass-search { flex-direction: column; align-items: stretch; }
+    .f-item { min-width: 45%; }
+}
+
+/* --- 10. BUTTONS & UTILS --- */
+.btn-lux {
+    padding: 14px 28px; border: 1px solid var(--border); color: #ffffff;
+    text-decoration: none; font-size: 0.7rem; font-weight: 800;
+    text-transform: uppercase; letter-spacing: 2px; border-radius: 6px;
+    transition: 0.3s; display: inline-block;
+}
+.btn-lux.primary { background: var(--accent); color: #000; border: none; }
+
+.pulse-animation {
+    animation: pulse 0.5s ease-out;
+    color: var(--accent) !important;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.3); text-shadow: 0 0 10px var(--accent); }
+    100% { transform: scale(1); }
+}
+
+@keyframes slideIn {
+    from { transform: translateX(120%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+.card-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.btn-lux {
+    flex: 1;
+    padding: 14px;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-lux.primary {
+    background: var(--accent); 
+    color: #000;
+}
+.btn-lux.primary:hover {
+    filter: brightness(1.1);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(217, 255, 0, 0.2);
+}
+
+.btn-lux.details-alt {
+    background: rgba(255, 255, 255, 0.05); 
+    color: #ffffff;
+    border: 1px solid var(--border);
+}
+.btn-lux.details-alt:hover {
+    background: #332ba3;
+    color: #000;
+    transform: translateY(-2px);
+}
+
+footer {
+    border-top: 1px solid var(--border);
+    background: #020202;
+    margin-top: 100px;
+    padding: 80px 0;
+}
+
+.footer-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.footer-container .logo {
+    font-size: 1.8rem;
+    letter-spacing: 5px;
+    margin-bottom: 30px;
+}
+
+/* Stil za ikone */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.social-icons a {
+    color: var(--text-muted);
+    font-size: 1.2rem;
+    transition: var(--transition);
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    color: var(--accent); 
+    transform: translateY(-3px);
+}
+
+.copyright {
+    opacity: 0.3;
+    font-size: 0.6rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* VIDEO*/
+
+.video-section{
+  width: 100%;
+  background: #000;
+  padding: 40px 0;
+}
+
+.video-wrapper{
+  position: relative;
+  width: 90%;
+  max-width: 1400px;
+  margin: 0 auto;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 30px 80px rgba(0,0,0,.8);
+  cursor: pointer;
+  border: 1px solid var(--border);
+  background: #000;
+}
+
+.video-wrapper video{
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* Lagani overlay da video bude vidljiviji */
+.video-wrapper::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,.12),
+    rgba(0,0,0,.45)
+  );
+  pointer-events:none;
+}
+
+.video-wrapper.is-playing::after{
+  background: rgba(0,0,0,.15);
+}
+
+/* Play/Replay gumb */
+.video-play{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0,0,0,.72);
+  color: var(--accent);
+  font-size: 2.2rem;
+  font-weight: 800;
+  cursor: pointer;
+  z-index: 5;
+  transition: .22s ease;
+}
+
+.video-play:hover{
+  transform: translate(-50%,-50%) scale(1.08);
+}
+
+/* “Tap/Click to play / replay” */
+.video-tap{
+  position:absolute;
+  bottom: 18px;
+  left:50%;
+  transform:translateX(-50%);
+  font-size: .7rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #fff;
+  opacity: .75;
+  z-index: 5;
+}
+
+.video-play.hidden,
+.video-tap.hidden{
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Mobile */
+@media (max-width: 768px){
+  .video-section{ padding: 28px 0; }
+  .video-play{
+    width: 70px;
+    height: 70px;
+    font-size: 1.8rem;
+  }
+}

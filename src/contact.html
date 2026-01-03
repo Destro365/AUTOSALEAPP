@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="hr" data-theme="dark">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AutoSale | O sustavu i Kontakt</title>
+    
+    <meta name="robots" content="noindex, nofollow">
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+
+<header class="site-header">
+    <div class="nav-container">
+        <a href="index.html" class="logo">AUTO<span>SALE</span></a>
+        
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="gallery.html">Vehicles</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <div class="nav-right">
+            <a href="kosarica.html" id="garage-link" class="cart-link" style="display: none;">GARAGE [<span id="cart-count">0</span>]</a>
+            <button id="themeToggle" class="theme-toggle-btn-menu">🌓</button>
+            <a href="login.html" class="login-btn-top" id="login-trigger">Login/Sign Up</a>
+            
+            <div class="hamburger" id="hamburger">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="mobile-nav-overlay" id="mobile-menu">
+        <ul class="mobile-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="gallery.html">Vehicles</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.html">Login/Sign Up</a></li>
+        </ul>
+    </div>
+</header>
+
+<section class="page-header" style="padding: 160px 0 60px; text-align: center;">
+    <div class="container" data-aos="fade-down">
+        <p class="category-label">Enterprise Solutions</p>
+        <h1 class="syncopate" style="font-size: clamp(1.5rem, 5vw, 3.5rem);">ABOUT & CONTACT</h1>
+    </div>
+</section>
+
+<main class="container">
+    <section style="text-align: center; max-width: 800px; margin: 0 auto 80px;">
+        <p class="muted" data-aos="fade-up" style="font-size: 1.1rem; line-height: 1.8;">
+            AutoSale je vodeća platforma za prodaju luksuznog auto-kataloga. 
+            Naš sustav nudi personalizirano iskustvo pregleda i kupnje najekskluzivnijih vozila na tržištu.
+        </p>
+    </section>
+
+    <div class="car-grid" style="margin-bottom: 80px;">
+        <div class="car-card" data-aos="fade-up" data-aos-delay="100" style="padding: 40px; text-align: center;">
+            <div style="font-size: 2.5rem; color: var(--accent); margin-bottom: 20px; font-family: 'Syncopate';">01</div>
+            <h3 class="syncopate" style="font-size: 0.8rem; margin-bottom: 15px;">KATALOG</h3>
+            <p class="muted">Dinamički prikaz vozila s filtriranjem performansi u realnom vremenu.</p>
+        </div>
+        <div class="car-card" data-aos="fade-up" data-aos-delay="200" style="padding: 40px; text-align: center;">
+            <div style="font-size: 2.5rem; color: var(--accent); margin-bottom: 20px; font-family: 'Syncopate';">02</div>
+            <h3 class="syncopate" style="font-size: 0.8rem; margin-bottom: 15px;">GARAŽA</h3>
+            <p class="muted">Lokalna pohrana vozila koja vam omogućuje praćenje vaših favorita.</p>
+        </div>
+        <div class="car-card" data-aos="fade-up" data-aos-delay="300" style="padding: 40px; text-align: center;">
+            <div style="font-size: 2.5rem; color: var(--accent); margin-bottom: 20px; font-family: 'Syncopate';">03</div>
+            <h3 class="syncopate" style="font-size: 0.8rem; margin-bottom: 15px;">PODRŠKA</h3>
+            <p class="muted">Izravna komunikacija s našim stručnjacima za svako pojedino vozilo.</p>
+        </div>
+    </div>
+
+    <div class="car-grid" style="gap: 30px;">
+        <div class="car-card" data-aos="fade-right" style="padding: 40px;">
+            <h3 class="syncopate" style="font-size: 1.1rem; margin-bottom: 30px; color: var(--accent);">INFO</h3>
+            <div style="line-height: 2.8; margin-bottom: 40px;">
+                <p class="muted" style="font-size: 0.8rem;">EMAIL: <span style="color: var(--text-main);">WebApp@AutoSale.com</span></p>
+                <p class="muted" style="font-size: 0.8rem;">TELEFON: <span style="color: var(--text-main);">+385 99 123 4567</span></p>
+                <p class="muted" style="font-size: 0.8rem;">LOKACIJA: <span style="color: var(--text-main);">Zagreb, Hrvatska</span></p>
+            </div>
+            <div style="background: var(--glass); padding: 25px; border-radius: 12px; border-left: 4px solid var(--accent);">
+                <p class="category-label" style="margin-bottom: 5px;">Radno vrijeme</p>
+                <p style="font-size: 1rem;">Pon – Pet: 08:00 – 16:00</p>
+            </div>
+        </div>
+
+        <div class="car-card" data-aos="fade-left" style="padding: 40px;">
+            <h3 class="syncopate" style="font-size: 1.1rem; margin-bottom: 30px;">POŠALJITE UPIT</h3>
+            <form action="#" id="contactForm">
+                <input type="text" placeholder="Ime i prezime" required style="width:100%; background:transparent; border:none; border-bottom:1px solid var(--border); color:var(--text-main); padding:12px 0; margin-bottom:25px; outline:none; font-family: 'Inter';">
+                <input type="email" placeholder="Vaš Email" required style="width:100%; background:transparent; border:none; border-bottom:1px solid var(--border); color:var(--text-main); padding:12px 0; margin-bottom:25px; outline:none; font-family: 'Inter';">
+                <textarea id="message" rows="4" placeholder="Vaša poruka..." style="width:100%; background:transparent; border:none; border-bottom:1px solid var(--border); color:var(--text-main); padding:12px 0; margin-bottom:30px; outline:none; resize:none; font-family: 'Inter';"></textarea>
+                <button type="submit" class="btn-lux primary" style="width:100%; cursor: pointer;">POŠALJI ZAHTJEV</button>
+            </form>
+        </div>
+    </div>
+
+    <section style="margin-top: 100px; margin-bottom: 120px;" data-aos="zoom-in">
+        <h2 class="syncopate" style="text-align: center; margin-bottom: 40px; font-size: 1.2rem; letter-spacing: 3px;">Posjetite Nas</h2>
+        <div style="border: 1px solid var(--border); border-radius: 20px; overflow: hidden; height: 500px; box-shadow: 0 20px 40px rgba(0,0,0,0.4);">
+            <iframe 
+                src="https://www.google.com/maps?q=Vukovarska%20cesta%2080,%20Zagreb&output=embed" 
+                width="100%" 
+                height="100%" 
+                style="border:0; filter: grayscale(1) invert(0.9) contrast(1.2);" 
+                allowfullscreen="" 
+                loading="lazy">
+            </iframe>
+        </div>
+        <div style="text-align: center; margin-top: 25px;">
+            <p class="muted" style="font-size: 0.8rem; letter-spacing: 2px;">Ul. grada Vukovara 80, 10000 ZAGREB, CROATIA</p>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-container" style="text-align: center; padding: 80px 5%; border-top: 1px solid var(--border); background: #020202; margin-top: 100px;">
+        <div class="logo syncopate" style="font-size: 1.8rem; letter-spacing: 5px;">
+            AUTO<span>SALE</span>
+        </div>
+
+        <div class="social-icons">
+            <a href="https://facebook.com"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://instagram.com"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://twitter.com"><i class="fa-brands fa-twitter"></i></a>
+            <a href="https://youtube.com"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://github.com/Destro365"><i class="fa-brands fa-github"></i></a>
+
+        </div>
+
+        <p style="opacity: 0.3; font-size: 0.6rem; letter-spacing: 1px; margin-top: 20px;">© 2025 AUTOSALE ELITE GROUP. ALL RIGHTS RESERVED.</p>
+    </div>
+
+    
+
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="main.js"></script>
+<script>
+    AOS.init({ duration: 1000, once: true });
+    
+    const params = new URLSearchParams(window.location.search);
+    if(params.get('id')) {
+        const msgField = document.getElementById('message');
+        if(msgField) msgField.value = `Zanima me vozilo ID: ${params.get('id')}. Molim vas više informacija.`;
+    }
+
+    document.getElementById('contactForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+        alert('Zahtjev poslan! Naši stručnjaci će vam se javiti uskoro.');
+    });
+</script>
+</body>
+</html>

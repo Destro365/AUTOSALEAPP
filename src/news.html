@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="hr" data-theme="dark">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AutoSale | News</title>
+    
+    <meta name="robots" content="noindex, nofollow">
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <style>
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+        .journal-card {
+            background: var(--black-card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .journal-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+        .journal-img {
+            height: 240px;
+            background-size: cover;
+            background-position: center;
+            transition: 0.5s;
+        }
+        .journal-card:hover .journal-img {
+            transform: scale(1.05);
+        }
+        .journal-body {
+            padding: 30px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .journal-card h3 {
+            font-family: 'Syncopate', sans-serif;
+            font-size: 1rem;
+            margin: 15px 0;
+            line-height: 1.5;
+            letter-spacing: 1px;
+        }
+        .journal-card .meta {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-muted);
+            margin-top: auto;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+        }
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.6rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent);
+            font-weight: 800;
+        }
+        .dot {
+            width: 6px;
+            height: 6px;
+            background: var(--accent);
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+
+<header class="site-header">
+    <div class="nav-container">
+        <a href="index.html" class="logo">AUTO<span>SALE</span></a>
+        
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="gallery.html">Vehicles</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <div class="nav-right">
+            <a href="kosarica.html" id="garage-link" class="cart-link" style="display: none;">GARAGE [<span id="cart-count">0</span>]</a>            <button id="themeToggle" class="theme-toggle-btn-menu">🌓</button>
+            <a href="login.html" class="login-btn-top" id="login-trigger">Login/Sign Up</a>
+            
+            <div class="hamburger" id="hamburger">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="mobile-nav-overlay" id="mobile-menu">
+        <ul class="mobile-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="gallery.html">Vehicles</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.html">Login/Sign Up</a></li>
+        </ul>
+    </div>
+</header>
+
+<main class="container" style="margin-top: 120px; min-height: 80vh;">
+    <section style="padding: 40px 0;">
+        <div class="section-head" data-aos="fade-right">
+            <h1 class="syncopate" style="font-size: clamp(2.5rem, 8vw, 4rem); margin: 10px 0;">NEWS</h1>
+            <p class="muted">Ekskluzivni vodiči, procedure i industrijske novosti za kolekcionare.</p>
+        </div>
+
+        <div class="news-grid">
+            <article class="journal-card" data-aos="fade-up" data-aos-delay="100">
+                <div style="overflow:hidden;">
+                    <div class="journal-img" style="background-image: url('https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=800');"></div>
+                </div>
+                <div class="journal-body">
+                    <h3 class="syncopate">Kontrolna lista prije kupnje</h3>
+                    <p class="muted small" style="margin-bottom: 25px;">Sve što trebate znati o dokumentaciji i detaljnom fizičkom pregledu rabljenih vozila.</p>
+                    <a class="btn-lux primary" href="news-1.html" style="width: 100%; text-align: center; font-size: 0.7rem;">READ ARTICLE</a>
+                    <div class="meta">Objavljeno: 18.12.2025.</div>
+                </div>
+            </article>
+
+
+
+
+            <article class="journal-card" data-aos="fade-up" data-aos-delay="200">
+                <div style="overflow:hidden;">
+                    <div class="journal-img" style="background-image: url('https://images.unsplash.com/photo-1550355291-bbee04a92027?auto=format&fit=crop&w=800');"></div>
+                </div>
+                <div class="journal-body">
+                    <h3 class="syncopate">Validacija servisne povijesti</h3>
+                    <p class="muted small" style="margin-bottom: 25px;">Kako prepoznati autentične servisne zapise i digitalne certifikate luksuznih marki.</p>
+                    <button class="btn-lux" disabled style="width: 100%; text-align: center; font-size: 0.7rem; opacity: 0.5;">COMING SOON</button>
+                    <div class="meta">Objavljeno: 15.12.2025.</div>
+                </div>
+            </article>
+
+            <article class="journal-card" data-aos="fade-up" data-aos-delay="300">
+                <div style="overflow:hidden;">
+                    <div class="journal-img" style="background-image: url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800');"></div>
+                </div>
+                <div class="journal-body">
+                    <h3 class="syncopate">Standardna probna vožnja</h3>
+                    <p class="muted small" style="margin-bottom: 25px;">Protokol za testiranje performansi podvozja i elektronike pri visokim brzinama.</p>
+                    <button class="btn-lux" disabled style="width: 100%; text-align: center; font-size: 0.7rem; opacity: 0.5;">COMING SOON</button>
+                    <div class="meta">Objavljeno: 12.12.2025.</div>
+                </div>
+            </article>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-container" style="text-align: center; padding: 80px 5%; border-top: 1px solid var(--border); background: #020202; margin-top: 100px;">
+        <div class="logo syncopate" style="font-size: 1.8rem; letter-spacing: 5px;">
+            AUTO<span>SALE</span>
+        </div>
+
+        <div class="social-icons">
+            <a href="https://facebook.com"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://instagram.com"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://twitter.com"><i class="fa-brands fa-twitter"></i></a>
+            <a href="https://youtube.com"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://github.com/Destro365"><i class="fa-brands fa-github"></i></a>
+        </div>
+
+        <p style="opacity: 0.3; font-size: 0.6rem; letter-spacing: 1px; margin-top: 20px;">© 2025 AUTOSALE ELITE GROUP. ALL RIGHTS RESERVED.</p>
+    </div>
+
+    
+
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="main.js"></script>
+<script>
+    AOS.init({ duration: 1000, once: true });
+    
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+</script>
+
+</body>
+</html>

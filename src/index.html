@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="hr" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AUTOSALE | Elite Automotive Marketplace</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+
+<header class="site-header">
+    <nav class="nav-container">
+        <a href="index.html" class="logo">AUTO<span>SALE</span></a>
+        
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="gallery.html">Vehicles</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <div class="nav-right">
+            <a href="kosarica.html" id="garage-link" class="cart-link" style="display: none;">GARAGE [<span id="cart-count">0</span>]</a>            <button id="themeToggle" class="theme-toggle-btn-menu">🌓</button>
+            <a href="login.html" class="login-btn-top" id="login-trigger">Login/Sign Up</a>
+            
+            <div class="hamburger" id="hamburger">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="mobile-nav-overlay" id="mobile-menu">
+        <ul class="mobile-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="gallery.html">Vehicles</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.html">Login/Sign Up</a></li>
+        </ul>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="hero-content">
+        <p data-aos="fade-up">The Ultimate Selection of Performance</p>
+        <h1 data-aos="fade-up" data-aos-delay="200">PURE<br>ADRENALINE.</h1>
+        <div data-aos="fade-up" data-aos-delay="400">
+            <a href="gallery.html" class="btn-lux primary">Explore Inventory</a>
+        </div>
+    </div>
+</section>
+
+
+
+<div class="search-container" data-aos="fade-up">
+    <div class="glass-search">
+        <div class="search-group">
+            <label>Brand</label>
+            <select id="sBrand">
+                <option value="">All Marques</option>
+                <option value="Porsche">Porsche</option>
+                <option value="Tesla">Tesla</option>
+                <option value="Rolls-Royce">Rolls-Royce</option>
+                <option value="Lamborghini">Lamborghini</option>
+                <option value="Audi">Audi</option>
+                <option value="Ferrari">Ferrari</option>
+                <option value="Aston Martin">Aston Martin</option>
+                <option value="Bugatti">Bugatti</option>
+                <option value="Koenigsegg">Koenigsegg</option>
+                <option value="Pagani">Pagani</option>
+                <option value="McLaren">McLaren</option>
+                <option value="Rimac">Rimac</option>
+                <option value="Mercedes-AMG">Mercedes-AMG</option>
+                <option value="Nissan">Nissan</option>
+                <option value="BMW">BMW</option>
+                <option value="Chevrolet">Chevrolet</option>
+                <option value="Lotus">Lotus</option>
+                <option value="Jaguar">Jaguar</option>
+                <option value="Maserati">Maserati</option>
+                <option value="Mercedes-Benz">Mercedes-Benz</option>
+                <option value="Ford">Ford</option>
+                <option value="Bentley">Bentley</option>
+                <option value="Škoda">Škoda</option>
+                <option value="Range Rover">Range Rover</option>
+                <option value="Genesis">Genesis</option>
+                <option value="Renault">Renault</option>
+                <option value="VW">VW</option>
+                <option value="Alfa Romeo">Alfa Romeo</option>
+                <option value="Toyota">Toyota</option>
+                <option value="Mazda">Mazda</option>
+                <option value="Lexus">Lexus</option>
+                <option value="KIA">KIA</option>
+                <option value="Land Rover">Land Rover</option>
+                <option value="Jeep">Jeep</option>
+                <option value="Cadillac">Cadillac</option>
+                <option value="RAM">RAM</option>
+                <option value="Rivian">Rivian</option>
+                <option value="Lucid">Lucid</option>
+                <option value="Scania">Scania</option>
+                <option value="MAN">MAN</option>
+                <option value="Ducati">Ducati</option>
+                <option value="Hymer">Hymer</option>
+                <option value="Riva">Riva</option>
+                <option value="Gulfstream">Gulfstream</option>
+                <option value="Cessna">Cessna</option>
+            </select>
+        </div>
+        <div class="search-group">
+            <label>Max Budget (€)</label>
+            <input type="number" id="sPrice" placeholder="e.g. 200000">
+        </div>
+        <button class="btn-search" onclick="redirectSearch()">Find Vehicle</button>
+    </div>
+</div>
+
+<section class="video-section">
+  <div class="video-wrapper" id="promoVideo">
+
+    <video
+      id="promoVid"
+      playsinline
+      preload="metadata"
+      poster="img/video-poster.jpg"
+    >
+      <source src="media/AUTOSALE.mp4" type="video/mp4">
+      Vaš preglednik ne podržava video.
+    </video>
+
+    <button class="video-play" id="videoPlayBtn" aria-label="Play video">▶</button>
+    <div class="video-tap" id="videoTapHint"></div>
+
+  </div>
+</section>
+
+
+
+
+<div class="marquee-strip">
+    <div class="marquee-content syncopate">
+       • HYPERCAR • SUPERSPORT • EXOTIC • LUXURY • SEDAN • COUPE • CABRIO • SUV • OFFROAD • PICKUP • ELECTRIC • HYBRID • VANS • TRUCKS • BUSES • MOTORCYCLES • CAMPERS • BOATS • AIRCRAFT • HYPERCAR • SUPERSPORT • EXOTIC • LUXURY • SEDAN • COUPE • CABRIO • SUV • OFFROAD • PICKUP • ELECTRIC • HYBRID • VANS • TRUCKS • BUSES • MOTORCYCLES • CAMPERS • BOATS • AIRCRAFT • HYPERCAR • SUPERSPORT • EXOTIC • LUXURY • SEDAN • COUPE • CABRIO • SUV • OFFROAD • PICKUP • ELECTRIC • HYBRID • VANS • TRUCKS • BUSES • MOTORCYCLES • CAMPERS • BOATS • AIRCRAFT •
+    </div>
+</div>
+
+<section class="container" data-aos="fade-up">
+    <div class="filter-grid-main">
+        <div class="f-item" onclick="window.location.href='gallery.html?type=hypercar'"><span>🏎️</span><p>HYPERCAR</p></div>
+        <div class="f-item" onclick="window.location.href='gallery.html?type=supersport'"><span>🏁</span><p>SUPERSPORT</p></div>
+        <div class="f-item" onclick="window.location.href='gallery.html?type=exotic'"><span>🔥</span><p>EXOTIC</p></div>
+        <div class="f-item" onclick="window.location.href='gallery.html?type=luxury'"><span>👑</span><p>LUXURY</p></div>
+        <div class="f-item" onclick="window.location.href='gallery.html?type=sedan'"><span>🏙️</span><p>SEDAN</p></div>
+        <div class="f-item" onclick="window.location.href='gallery.html?type=coupe'"><span>💎</span><p>COUPE</p></div>
+        <div class="f-item" onclick="window.location.href='gallery.html?type=cabrio'"><span>☀️</span><p>CABRIO</p></div>
+        <div class="f-item" onclick="window.location.href='gallery.html?type=suv'"><span>🏔️</span><p>SUV</p></div>
+        <div class="f-item" onclick="window.location.href='gallery.html?type=offroad'"><span>🚜</span><p>OFFROAD</p></div>
+        <div class="f-item" onclick="window.location.href='gallery.html?type=pickup'"><span>🛻</span><p>PICKUP</p></div>
+        <div class="f-item" onclick="window.location.href='gallery.html?type=electric'"><span>⚡</span><p>ELECTRIC</p></div>
+        <div class="f-item" onclick="window.location.href='gallery.html?type=hybrid'"><span>🔋</span><p>HYBRID</p></div>
+        <div class="f-item" onclick="window.location.href='gallery.html?type=vans'"><span>🚐</span><p>VANS</p></div>
+        <div class="f-item" onclick="window.location.href='gallery.html?type=trucks'"><span>🚛</span><p>TRUCKS</p></div>
+        <div class="f-item" onclick="window.location.href='gallery.html?type=buses'"><span>🚌</span><p>BUSES</p></div>
+        <div class="f-item" onclick="window.location.href='gallery.html?type=motorcycles'"><span>🏍️</span><p>MOTORCYCLES</p></div>
+        <div class="f-item" onclick="window.location.href='gallery.html?type=campers'"><span>🏕️</span><p>CAMPERS</p></div>
+        <div class="f-item" onclick="window.location.href='gallery.html?type=boats'"><span>🛥️</span><p>BOATS</p></div>
+        <div class="f-item" onclick="window.location.href='gallery.html?type=aircraft'"><span>🛩️</span><p>AIRCRAFT</p></div>
+    </div>
+</section>
+
+<main class="grid-container" id="inventory">
+    <div class="section-header" data-aos="fade-right" style="margin-bottom: 40px;">
+        <h2 class="section-title syncopate" style="font-size: 2rem;">New Arrivals</h2>
+        <p class="muted">Ekskluzivni noviteti u našem salonu.</p>
+    </div>
+    <div id="car-list" class="car-grid"></div>
+    <div style="text-align: center; margin-top: 60px;" data-aos="fade-up">
+        <a href="gallery.html" class="btn-lux">View All Vehicles</a>
+    </div>
+</main>
+
+<footer>
+    <div class="footer-container" style="text-align: center; padding: 80px 5%; border-top: 1px solid var(--border); background: #020202; margin-top: 100px;">
+        <div class="logo syncopate" style="font-size: 1.8rem; letter-spacing: 5px;">
+            AUTO<span>SALE</span>
+        </div>
+
+        <div class="social-icons">
+            <a href="https://facebook.com"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://instagram.com"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://twitter.com"><i class="fa-brands fa-twitter"></i></a>
+            <a href="https://youtube.com"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://github.com/Destro365"><i class="fa-brands fa-github"></i></a>
+        </div>
+
+        <p style="opacity: 0.3; font-size: 0.6rem; letter-spacing: 1px; margin-top: 20px;">© 2025 AUTOSALE ELITE GROUP. ALL RIGHTS RESERVED.</p>
+    </div>
+
+    
+
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="main.js"></script>
+<script>
+    AOS.init({ duration: 1000, once: true });
+    function redirectSearch() {
+        const brand = document.getElementById('sBrand').value;
+        const price = document.getElementById('sPrice').value;
+        window.location.href = `gallery.html?brand=${brand}&price=${price}`;
+    }
+</script>
+</body>
+</html>
