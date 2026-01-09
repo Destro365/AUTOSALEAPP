@@ -198,23 +198,15 @@ function updateNav() {
     const user = localStorage.getItem('autosale_user');
     
     const navRight = document.querySelector('.nav-right');
-    const garageLink = document.getElementById('garage-link');
     const mobileLinks = document.querySelector('.mobile-links');
 
-    // 1. Logika za Garažu: Pokaži samo ako je ulogiran
-    if (garageLink) {
-        if (isLoggedIn) {
-            garageLink.style.display = 'block'; 
-        } else {
-            garageLink.style.display = 'none';  
-        }
-    }
-
-    // 2. Logika za Desktop gumbe 
+    // 1. Logika za Desktop gumbe (S IKONOM GARAŽE)
     if (navRight) {
         if (isLoggedIn && user) {
             navRight.innerHTML = `
-                <a href="kosarica.html" id="garage-link" class="cart-link">GARAGE [<span id="cart-count">0</span>]</a>
+                <a href="kosarica.html" id="garage-link" class="cart-link">
+                    <i class="fa-solid fa-warehouse"></i> [<span id="cart-count">0</span>]
+                </a>
                 <button id="themeToggle" class="theme-toggle-btn-menu">🌓</button>
                 <span class="user-welcome" style="font-size: 0.65rem; color: var(--text-muted); letter-spacing: 1px; font-weight:700;">
                     HI, <span style="color: var(--accent);">${user.toUpperCase()}</span>
@@ -235,7 +227,7 @@ function updateNav() {
         }
     }
 
-    // 3. Logika za mobilni meni (da i tamo bude isto)
+    // 2. Logika za mobilni meni (IKONA + TEKST ZA JASNOĆU)
     if (mobileLinks) {
         let linksHTML = `
             <li><a href="index.html">Home</a></li>
@@ -244,7 +236,7 @@ function updateNav() {
             <li><a href="contact.html">Contact</a></li>
         `;
         if (isLoggedIn) {
-            linksHTML += `<li><a href="kosarica.html">Garage</a></li>`;
+            linksHTML += `<li><a href="kosarica.html"><i class="fa-solid fa-warehouse"></i> Garage</a></li>`;
             linksHTML += `<li><a href="#" onclick="logout()" style="color: var(--accent);">Logout</a></li>`;
         } else {
             linksHTML += `<li><a href="login.html">Login/Sign Up</a></li>`;
